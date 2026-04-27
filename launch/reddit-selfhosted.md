@@ -29,4 +29,6 @@ docker run --rm -v $(pwd):/scan backupproof scan /scan/docker-compose.yml --form
 
 It does not run backups, run restores, connect to containers, or upload Compose files anywhere. It is just a read-only sanity check. It also does not replace a real restore test.
 
+I'm also collecting interest for a hosted SelfHostGuard dashboard and backup setup reviews, but the CLI itself is free and open source.
+
 I would appreciate feedback from people with real self-hosted Compose setups, especially examples where the heuristic gets something wrong or misses a common backup pattern. If it seems useful, a GitHub star also helps other self-hosters find it, but feedback is more useful right now.

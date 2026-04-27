@@ -109,6 +109,12 @@ It runs locally. It does not upload Compose files, connect to containers, run ba
 
 It also does not guarantee recoverability. It is a lightweight readiness review tool, not a replacement for a real restore test.
 
+## What might come next
+
+If the CLI proves useful, I may explore SelfHostGuard as a hosted dashboard for scheduled scans, restore-test reminders, scan history, backup risk changes over time, and alerts.
+
+That does not exist yet. The CLI is still free and open source, and real restore tests are still required.
+
 ## GitHub link
 
 GitHub:
