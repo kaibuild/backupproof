@@ -6,9 +6,7 @@ BackupProof reviews Docker Compose configuration locally. It does not send Compo
 
 Please do not paste secrets, private Compose files, tokens, passwords, hostnames, or credentials into public issues.
 
-For now, report security concerns by contacting the maintainer:
-
-`[maintainer contact placeholder]`
+Please report security concerns by contacting the maintainer through the GitHub profile. Do not post secrets, credentials, private compose files, or sensitive infrastructure details in public issues.
 
 If GitHub private vulnerability reporting is enabled for the repository, use that instead.
 
