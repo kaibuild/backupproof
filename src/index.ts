@@ -1,5 +1,6 @@
 import { resolve } from "node:path";
 import { parseComposeFile } from "./parser.js";
+import { renderJsonReport } from "./report/json.js";
 import { renderMarkdownReport } from "./report/markdown.js";
 import { backupHintsRule } from "./rules/backupHints.js";
 import { backupServicesRule } from "./rules/backupServices.js";
@@ -114,7 +115,7 @@ export function scanCompose(compose: ComposeFile, filePath = "docker-compose.yml
   };
 }
 
-export { renderMarkdownReport };
+export { renderJsonReport, renderMarkdownReport };
 
 export function analyzeCompose(compose: ComposeFile, filePath: string): ScanContext {
   const services = Object.entries(compose.services).map(([name, service]) => analyzeService(name, service));

@@ -2,7 +2,7 @@
 
 Open-source backup readiness checker for self-hosted Docker Compose stacks.
 
-BackupProof scans a `docker-compose.yml` file and prints a Markdown report about persistent services, database volumes, missing backup hints, and missing restore-test signals. It is built for self-hosters, homelab users, small teams, and developers running apps on a VPS, NAS, home server, Tailscale, WireGuard, or a reverse proxy.
+BackupProof scans a `docker-compose.yml` file and prints a Markdown or JSON report about persistent services, database volumes, missing backup hints, and missing restore-test signals. It is built for self-hosters, homelab users, small teams, and developers running apps on a VPS, NAS, home server, Tailscale, WireGuard, or a reverse proxy.
 
 BackupProof is a lightweight readiness review tool. It does not guarantee recoverability, run backups, run restores, connect to containers, or replace a real restore test.
 
@@ -54,12 +54,94 @@ After installing from npm in the future, the intended command is:
 backupproof scan ./docker-compose.yml --format markdown
 ```
 
+Markdown is the default output format:
+
+```bash
+node dist/cli.js scan ./docker-compose.yml
+```
+
+## JSON Output
+
+Use JSON when you want machine-readable output for CI, scripts, or dashboards you build yourself:
+
+```bash
+node dist/cli.js scan ./docker-compose.yml --format json
+```
+
+The JSON report includes tool metadata, the scanned file path, finding counts by severity, persistent volume counts, database-like service counts, backup hints, restore-test hints, persistent services, volumes, and findings.
+
+## CI Fail Thresholds
+
+Use `--fail-on` to make BackupProof return a failing exit code when findings meet or exceed a severity threshold:
+
+```bash
+node dist/cli.js scan ./docker-compose.yml --fail-on high
+node dist/cli.js scan ./docker-compose.yml --format json --fail-on medium
+```
+
+Allowed values:
+
+- `none` - always exit `0`; this is the default for backward compatibility
+- `high` - exit `1` if any high finding exists
+- `medium` - exit `1` if any medium or high finding exists
+- `low` - exit `1` if any low, medium, or high finding exists
+
+Exit codes:
+
+- `0` - scan completed and the selected threshold was not violated
+- `1` - scan completed and the selected `--fail-on` threshold was violated
+- `2` - invalid CLI usage or file parsing error
+
 ## Run With Docker
 
 ```bash
 docker build -t backupproof .
 docker run --rm -v $(pwd):/scan backupproof scan /scan/docker-compose.yml --format markdown
 ```
+
+Docker with JSON output:
+
+```bash
+docker run --rm -v $(pwd):/scan backupproof scan /scan/docker-compose.yml --format json
+```
+
+Docker with CI threshold:
+
+```bash
+docker run --rm -v $(pwd):/scan backupproof scan /scan/docker-compose.yml --format json --fail-on high
+```
+
+## GitHub Actions
+
+BackupProof can run in CI without contacting your containers or sending Compose files anywhere.
+
+Minimal example:
+
+```yaml
+name: BackupProof
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  backupproof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: node dist/cli.js scan examples/risky-compose.yml --format markdown --fail-on high
+      - run: node dist/cli.js scan examples/risky-compose.yml --format json
+```
+
+See [docs/ci-usage.md](docs/ci-usage.md) and [docs/github-actions-example.yml](docs/github-actions-example.yml).
 
 ## Example Report
 
@@ -94,9 +176,7 @@ See [examples/report.md](examples/report.md) for a generated example.
 
 ## Roadmap
 
-- JSON report output
 - HTML report output
-- GitHub Actions integration
 - Better backup tool detection
 - Restore-test reminder templates
 - Backup schedule detection
