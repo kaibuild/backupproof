@@ -1,0 +1,37 @@
+services:
+  app:
+    image: ghcr.io/example/notes-app:latest
+    volumes:
+      - ./uploads:/app/data
+    labels:
+      org.backupproof.backup: "covered by restic service: uploads"
+      org.backupproof.restore-test: "quarterly restore verification"
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: notes
+      POSTGRES_USER: notes
+      POSTGRES_PASSWORD: example-change-me
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    labels:
+      org.backupproof.backup: "covered by restic service: db_data logical dump"
+      org.backupproof.restore-test: "quarterly restore verification"
+
+  restic:
+    image: restic/restic:latest
+    command:
+      - backup
+      - /postgres-data
+      - /app-data
+    volumes:
+      - db_data:/postgres-data:ro
+      - ./uploads:/app-data:ro
+      - /mnt/backups:/repository
+    labels:
+      org.backupproof.backup: "covers db_data uploads /mnt/backups"
+      org.backupproof.restore-test: "restore-test runbook reviewed quarterly"
+
+volumes:
+  db_data:

@@ -1,0 +1,25 @@
+services:
+  app:
+    image: ghcr.io/example/notes-app:latest
+    volumes:
+      - ./uploads:/app/data
+    ports:
+      - "8080:8080"
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: notes
+      POSTGRES_USER: notes
+      POSTGRES_PASSWORD: example-change-me
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  cache:
+    image: redis:7
+    volumes:
+      - redis_data:/data
+
+volumes:
+  db_data:
+  redis_data:
