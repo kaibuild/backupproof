@@ -1,0 +1,36 @@
+{
+  "name": "backupproof",
+  "version": "0.1.0",
+  "description": "Open-source backup readiness checker for self-hosted Docker Compose stacks",
+  "type": "module",
+  "bin": {
+    "backupproof": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "scan:example": "node dist/cli.js scan examples/risky-compose.yml --format markdown"
+  },
+  "keywords": [
+    "backup",
+    "docker",
+    "docker-compose",
+    "self-hosted",
+    "homelab",
+    "restore-test"
+  ],
+  "author": "",
+  "license": "AGPL-3.0-only",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.5"
+  }
+}
