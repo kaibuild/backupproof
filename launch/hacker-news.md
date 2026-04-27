@@ -21,4 +21,6 @@ It is built for self-hosters, homelab users, and small teams running Compose on 
 
 The tool runs locally. It does not send Compose files anywhere, connect to containers, run backups, or run restores. It is intentionally just a lightweight review tool, not a guarantee that backups are correct.
 
+I am also collecting interest in a possible hosted SelfHostGuard dashboard later, but the CLI is the main thing today and remains free/open source.
+
 The MVP is TypeScript, a CLI, and Docker-friendly. Feedback on false positives, missing backup tools, and real-world Compose patterns would be very welcome.

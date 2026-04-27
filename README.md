@@ -193,9 +193,26 @@ Start with [CONTRIBUTING.md](CONTRIBUTING.md). Useful contributions include new 
 
 For now, use GitHub Issues and Discussions if enabled. Please avoid posting secrets, private hostnames, tokens, passwords, or complete production Compose files in public issues.
 
-## Hosted Version / Support Note
+## Hosted dashboard / paid support
 
-Hosted dashboards, scheduled backup readiness scans, alerts, and setup reviews may come later. If you are interested, open an issue or contact the maintainer.
+BackupProof is free and open source.
+
+A hosted SelfHostGuard dashboard may come later for teams that want:
+
+- scheduled backup readiness scans
+- scan history
+- restore-test reminders
+- backup risk diffs over time
+- GitHub Actions integration
+- Slack / Discord alerts
+- multi-stack monitoring
+- team reports
+
+This dashboard does not exist yet, and BackupProof still does not run backups, run restore tests, or guarantee recoverability. Real restore tests are still required.
+
+If you want early access, open an [Early Access Request](https://github.com/kozinkaihatusya/backupproof/issues/new?template=early_access_request.md).
+
+If you need help reviewing your self-hosted backup setup, open a [Setup Review Request](https://github.com/kozinkaihatusya/backupproof/issues/new?template=setup_review_request.md).
 
 ## License
 
