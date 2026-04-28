@@ -5,7 +5,7 @@ Body:
 I built BackupProof, a small open-source CLI that scans a `docker-compose.yml` file and prints a Markdown report about backup readiness.
 
 GitHub:
-https://github.com/kozinkaihatusya/backupproof
+https://github.com/kaibuilds/backupproof
 
 Why I built it:
 

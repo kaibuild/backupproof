@@ -84,4 +84,4 @@ It runs locally and is read-only. It does not upload Compose files, connect to c
 It also does not guarantee recoverability. It is a lightweight review tool, not a replacement for a real restore test.
 
 GitHub:
-https://github.com/kozinkaihatusya/backupproof
+https://github.com/kaibuilds/backupproof

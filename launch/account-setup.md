@@ -2,7 +2,7 @@
 
 Prepare accounts before launch week. Send all launch traffic to the GitHub repo:
 
-https://github.com/kozinkaihatusya/backupproof
+https://github.com/kaibuilds/backupproof
 
 ## Hacker News
 

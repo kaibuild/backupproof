@@ -4,4 +4,4 @@ It scans docker-compose.yml for persistent volumes, bind mounts, database servic
 
 Runs locally. Does not run backups.
 
-https://github.com/kozinkaihatusya/backupproof
+https://github.com/kaibuilds/backupproof

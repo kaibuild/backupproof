@@ -4,7 +4,7 @@ I built an open-source backup readiness checker for Docker Compose stacks
 Body:
 I built BackupProof, a small open-source CLI for self-hosted Docker Compose stacks:
 
-https://github.com/kozinkaihatusya/backupproof
+https://github.com/kaibuilds/backupproof
 
 It scans `docker-compose.yml` and reports:
 

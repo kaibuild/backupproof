@@ -62,4 +62,4 @@ BackupProof runs locally. It does not upload Compose files, connect to container
 It is just a way to make backup assumptions easier to see.
 
 GitHub:
-https://github.com/kozinkaihatusya/backupproof
+https://github.com/kaibuilds/backupproof

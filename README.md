@@ -210,9 +210,9 @@ A hosted SelfHostGuard dashboard may come later for teams that want:
 
 This dashboard does not exist yet, and BackupProof still does not run backups, run restore tests, or guarantee recoverability. Real restore tests are still required.
 
-If you want early access, open an [Early Access Request](https://github.com/kozinkaihatusya/backupproof/issues/new?template=early_access_request.md).
+If you want early access, open an [Early Access Request](https://github.com/kaibuilds/backupproof/issues/new?template=early_access_request.md).
 
-If you need help reviewing your self-hosted backup setup, open a [Setup Review Request](https://github.com/kozinkaihatusya/backupproof/issues/new?template=setup_review_request.md).
+If you need help reviewing your self-hosted backup setup, open a [Setup Review Request](https://github.com/kaibuilds/backupproof/issues/new?template=setup_review_request.md).
 
 ## License
 

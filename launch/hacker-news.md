@@ -6,7 +6,7 @@ Hi HN,
 
 I built BackupProof, an open-source backup readiness checker for self-hosted Docker Compose stacks:
 
-https://github.com/kozinkaihatusya/backupproof
+https://github.com/kaibuilds/backupproof
 
 It scans a `docker-compose.yml` file and prints a Markdown report that tries to answer a few practical questions:
 
