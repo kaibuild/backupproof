@@ -21,7 +21,7 @@ A future SelfHostGuard hosted dashboard may include:
 
 If this would be useful, open an Early Access Request:
 
-https://github.com/kaibuilds/backupproof/issues/new?template=early_access_request.md
+https://github.com/kaibuild/backupproof/issues/new?template=early_access_request.md
 
 ## Possible Paid Setup Review
 
@@ -39,7 +39,7 @@ This is not guaranteed support, and there is no fixed pricing yet. The current g
 
 If you want to request interest in a review, open a Setup Review Request:
 
-https://github.com/kaibuilds/backupproof/issues/new?template=setup_review_request.md
+https://github.com/kaibuild/backupproof/issues/new?template=setup_review_request.md
 
 ## Enterprise Or Self-Hosting Support
 

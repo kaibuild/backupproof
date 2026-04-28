@@ -118,4 +118,4 @@ That does not exist yet. The CLI is still free and open source, and real restore
 ## GitHub link
 
 GitHub:
-https://github.com/kaibuilds/backupproof
+https://github.com/kaibuild/backupproof
